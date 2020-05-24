@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="display-4">Tell Your Story</h1>
+    </div>
+
+    <div class="container">
+        <form method="POST">
+            <div class="form-group">
+                <label for="storyAuthor">Author</label>
+                <input class="form-control" type="text" name="author" placeholder="Your name">
+            </div>
+            <div class="form-group">
+                <label for="storyTitle">Title</label>
+                <input class="form-control"  type="text" name="title" placeholder="Story Title">
+            </div>
+            <div class="form-group">
+                <label for="story">Story</label>
+                <textarea class="form-control" name="content" id="contentBox" cols="30" rows="10" placeholder="Your Story"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Publish</button>
+        </form>
+    </div>
+    
+
+
+{% endblock content %}

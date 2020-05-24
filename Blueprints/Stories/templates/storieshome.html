@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="container mb-1">
+        <h1 class="display-2">COVID-19 Stories</h1>
+        <a href="/stories/create" class="btn btn-primary form-control text-white">
+            <span style="font-size: larger;">
+                Write a story
+            </span>
+        </a>
+    </div>
+
+    
+    <div class="container">
+        {% if stories|length > 0 %}
+            {% for story in stories %}
+                <div class="col-sm border">
+                    <form action="/stories/like/{{ story.id }}" method="POST">
+                        <div class="border-bottom">
+                            <h2 class="display-4">{{ story.author }} wrote: </h2>   
+                        </div>
+                        
+                        <h3>{{ story.title }}</h3>
+
+                        <p class="lead">{{ story.content }}</p>
+                        <p>On {{ story.date }}</p>
+                        <p>{{ story.likes }} likes</p>
+                        <button type="submit" class="btn btn-info text-white"><i class="fa fa-thumbs-up"></i></button>
+                    </form>
+                </div>
+
+            {% endfor %}
+        {% else %}
+            <p>No stories available</p>
+        {% endif %}
+    </div>
+
+{% endblock content %}
