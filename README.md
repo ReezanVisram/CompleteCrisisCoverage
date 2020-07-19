@@ -1,4 +1,4 @@
-# Complete COVID-19 Coverage
+# Complete Crisis Coverage
 ## Made for OpenHacks 2020
 
 A platform for users to get information about the global impact of COVID-19
